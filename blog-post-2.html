@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Hope for the Future of Trades — Mint Management Blog</title>
+<meta name="description" content="Entrepreneurship in the trades is lonely. Brad Dotinga shares the three things he would do differently and why he is building The Trades Room.">
+<meta property="og:title" content="My Hope for the Future of Trades">
+<meta property="og:description" content="Whether you just started or have been grinding for 15 years, there is a good chance you have felt it. The weight of running a business alone.">
+<meta property="og:type" content="article">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green: #2f3935;
+  --green-mid: #3a4640;
+  --gold: #947e64;
+  --gold-light: #b09a7e;
+  --cream: #f0ebe3;
+  --cream-muted: #c8bfb4;
+  --border: rgba(148,126,100,0.2);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito Sans', 'Avenir Next', 'Avenir', sans-serif;
+  background: var(--green);
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: 60px;
+  padding: 0 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(47,57,53,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.nav-right { display: flex; align-items: center; gap: 2rem; }
+
+.nav-link {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cream-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-link:hover { color: var(--gold); }
+
+.nav-cta {
+  background: var(--gold);
+  color: var(--green);
+  border: none;
+  padding: 8px 20px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.nav-cta:hover { background: var(--gold-light); }
+
+.post-header {
+  padding: 9rem 4rem 4rem;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.post-tag {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 0.5px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.post-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.post-meta-item {
+  font-size: 11px;
+  color: var(--cream-muted);
+  letter-spacing: 0.5px;
+}
+
+.post-meta-divider {
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.4;
+}
+
+.post-body {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 4rem 4rem 6rem;
+}
+
+.post-body p {
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--cream-muted);
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.post-body p strong { color: var(--cream); font-weight: 600; }
+
+.post-body h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.2;
+  margin: 3rem 0 1.2rem;
+  padding-top: 2rem;
+  border-top: 0.5px solid var(--border);
+}
+
+.post-intro {
+  font-size: 20px !important;
+  line-height: 1.7 !important;
+  color: var(--cream) !important;
+  font-weight: 300 !important;
+  margin-bottom: 2rem !important;
+}
+
+.post-divider {
+  width: 40px;
+  height: 0.5px;
+  background: var(--gold);
+  margin: 2.5rem 0;
+  opacity: 0.5;
+}
+
+.post-cta {
+  background: rgba(148,126,100,0.06);
+  border: 0.5px solid var(--border);
+  padding: 2.5rem;
+  margin-top: 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.post-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.post-cta h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--cream);
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+
+.post-cta h3 em { font-style: italic; color: var(--gold); }
+
+.post-cta p {
+  font-size: 15px !important;
+  color: var(--cream-muted) !important;
+  margin-bottom: 1.5rem !important;
+  max-width: 480px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--green);
+  border: none;
+  padding: 12px 28px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover { background: var(--gold-light); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--cream);
+  border: 0.5px solid rgba(240,235,227,0.3);
+  padding: 12px 28px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+.post-author {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2.5rem 4rem;
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.author-avatar {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: rgba(148,126,100,0.15);
+  border: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.author-name { font-size: 14px; font-weight: 600; color: var(--cream); margin-bottom: 3px; }
+.author-bio { font-size: 12px; color: var(--cream-muted); font-weight: 300; line-height: 1.5; }
+
+.back-bar {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 1.5rem 4rem;
+  border-top: 0.5px solid var(--border);
+}
+
+.back-link {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cream-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--gold); }
+
+footer {
+  border-top: 0.5px solid var(--border);
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.footer-brand { font-size: 11px; font-weight: 300; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); }
+.footer-copy { font-size: 10px; color: rgba(148,126,100,0.4); }
+
+@media (max-width: 768px) {
+  nav { padding: 0 1.5rem; }
+  .post-header, .post-body, .post-author, .back-bar { padding-left: 1.5rem; padding-right: 1.5rem; }
+  footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 0 1.2rem; }
+  .post-header { padding: 7rem 1.5rem 2rem; }
+  .post-title { font-size: clamp(28px, 8vw, 42px); }
+  .post-body { padding: 2rem 1.5rem 4rem; }
+  .post-body p { font-size: 16px; }
+  .post-body h2 { font-size: clamp(22px, 6vw, 30px); }
+  .post-intro { font-size: 18px !important; }
+  .post-author { padding: 2rem 1.5rem; }
+  .back-bar { padding: 1.5rem; }
+  .cta-buttons { flex-direction: column; }
+  .cta-buttons a { width: 100%; text-align: center; }
+  footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="mintmanagement.html" class="nav-logo">Mint Management</a>
+  <div class="nav-right">
+    <a href="blog.html" class="nav-link">← All Posts</a>
+    <a href="mintmanagement.html#contact" class="nav-cta">Let's Talk</a>
+  </div>
+</nav>
+
+<!-- POST HEADER -->
+<div class="post-header">
+  <div class="post-tag">Community & Growth</div>
+  <h1 class="post-title">My Hope for the Future of Trades</h1>
+  <div class="post-meta">
+    <span class="post-meta-item">By Brad Dotinga</span>
+    <div class="post-meta-divider"></div>
+    <span class="post-meta-item">July 24, 2026</span>
+    <div class="post-meta-divider"></div>
+    <span class="post-meta-item">5 min read</span>
+  </div>
+  <div style="border-bottom: 0.5px solid var(--border);"></div>
+</div>
+
+<!-- POST BODY -->
+<div class="post-body">
+
+  <p class="post-intro">Let me tell you something nobody talks about in the trades.</p>
+
+  <p class="post-intro">It is lonely.</p>
+
+  <p>Whether you just started your first company or you have been grinding for 15 years, there is a good chance you have felt it. The weight of running a business with nobody around who truly gets what you are going through. Making decisions at midnight that nobody else sees. Carrying the pressure of payroll, estimates, client expectations and crew management all at once, and doing it largely alone.</p>
+
+  <p>I lived that reality for 25 years. And if I could go back and do it differently, there are three things I would change immediately.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>I would have built community sooner</h2>
+
+  <p>For most of my career I looked at other subcontractors the same way most people in this industry do. As competition. Threats. People to keep my cards close around.</p>
+
+  <p>That was one of the biggest mistakes I ever made.</p>
+
+  <p>What I know now is that the most successful people in any industry are not the ones who guard their knowledge. They are the ones who share it. Who surround themselves with other driven business owners and treat them as partners and resources rather than rivals.</p>
+
+  <p>Imagine having a group of people in your corner who are building the same thing you are. People who understand your exact struggles. Who have made the mistakes you are about to make and can warn you before you make them. Who celebrate your wins because they know what it actually took to get there.</p>
+
+  <p><strong>That is not a weakness. That is a superpower.</strong></p>
+
+  <div class="post-divider"></div>
+
+  <h2>I would have hired a coach</h2>
+
+  <p>Does a coach cost money every month? Yes. Of course.</p>
+
+  <p>But you know what costs more? Making the same mistakes month after month because nobody ever taught you what to do differently.</p>
+
+  <p>Mistakes can be a good thing. I learned enormous lessons from mine and I do not regret a single one. But I would have paid anything to skip some of them. To have someone in my corner who had already been where I was going and could fast track me to where I wanted to be.</p>
+
+  <p>A good coach does not just give you advice. They compress years of learning into months. They hold you accountable when you want to take the easy road. They see the blind spots you cannot see because you are too deep inside your own business.</p>
+
+  <p><strong>If you are serious about growth, a coach is not an expense. It is the best investment you will ever make in your business.</strong></p>
+
+  <div class="post-divider"></div>
+
+  <h2>I would have gotten in bigger rooms</h2>
+
+  <p>Comfort breeds complacency. And complacency kills growth.</p>
+
+  <p>For too long I stayed in rooms where I was comfortable. Where I was one of the more experienced people. Where I was not being challenged or pushed.</p>
+
+  <p>The moment I started putting myself in rooms with people who were further ahead than me everything changed. My thinking expanded. My standards went up. My excuses went away.</p>
+
+  <p><strong>If you are the smartest person in the room you are in the wrong room. Find the room that makes you uncomfortable. That is where you grow.</strong></p>
+
+  <div class="post-divider"></div>
+
+  <h2>What I am building because of all of this</h2>
+
+  <p>I spent 25 years learning these lessons the hard way. Alone. And I have made it my mission to make sure the next generation of subcontractors does not have to.</p>
+
+  <p>That is why in the coming months I am building something I wish had existed when I was starting out.</p>
+
+  <p>It is called <strong>The Trades Room.</strong></p>
+
+  <p>A community built specifically for subcontractors, from the ones just getting started to the ones who have been in it for 15 years and are tired of doing it alone. A place to network, share wins, share losses, lean on each other, and actually feel like you are not in this by yourself.</p>
+
+  <p>Because you are not. You never were.</p>
+
+  <p>Entrepreneurship in the trades does not have to be lonely. That changes with The Trades Room.</p>
+
+  <div class="post-divider"></div>
+
+  <!-- CTA -->
+  <div class="post-cta">
+    <h3>Be first in<br><em>the door.</em></h3>
+    <p>The Trades Room is coming. Join the waitlist now and be part of the founding community.</p>
+    <div class="cta-buttons">
+      <a href="mintmanagement.html#community" class="btn-primary">Join the Waitlist</a>
+      <a href="mintmanagement.html#contact" class="btn-outline">Work With Brad</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- AUTHOR -->
+<div class="post-author">
+  <div class="author-avatar">B</div>
+  <div>
+    <div class="author-name">Brad Dotinga</div>
+    <div class="author-bio">Founder of Mint Management. 25 years in the trades. Builder, coach, and the guy behind Mint AI. Based in Kelowna, BC.</div>
+  </div>
+</div>
+
+<!-- BACK -->
+<div class="back-bar">
+  <a href="blog.html" class="back-link">← Back to all posts</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Mint Management · Blog</div>
+  <div class="footer-copy">© 2026 Mint Management · Lead. Build. Grow.</div>
+</footer>
+
+</body>
+</html>
