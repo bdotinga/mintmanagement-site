@@ -2014,26 +2014,36 @@ footer {
 
   </div>
 
-  <!-- ROW 2: 2 cards -->
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:1px; border:0.5px solid var(--border);">
+  <!-- ROW 2: 3 cards -->
+  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; border:0.5px solid var(--border); align-items:stretch;">
 
-    <div class="service-card reveal">
+    <div class="service-card reveal" style="display:flex; flex-direction:column;">
       <span class="service-num">04</span>
       <h3 class="service-title">Revenue on Repeat</h3>
-      <p class="service-desc">Brad's signature sales course built exclusively for subcontractors. Learn how to generate consistent, predictable revenue — without chasing work or underbidding jobs. The course that has generated millions in new revenue for clients across Canada.</p>
+      <p class="service-desc" style="flex:1;">Brad's signature sales course built exclusively for subcontractors. Learn how to generate consistent, predictable revenue, without chasing work or underbidding jobs. The course that has generated millions in new revenue for clients across Canada.</p>
       <div style="display:flex; align-items:center; justify-content:space-between; margin-top:auto; padding-top:1.5rem; flex-wrap:wrap; gap:0.8rem;">
         <span class="service-tag" style="margin-top:0; padding-top:0;">Flagship Course</span>
         <a href="https://buy.stripe.com/eVq4gs1f13Tee3c4tP9sk00" target="_blank" style="font-size:10px; letter-spacing:2px; text-transform:uppercase; background:var(--gold); color:var(--green-deep); padding:8px 18px; text-decoration:none; font-weight:700; font-family:inherit; border-radius:2px; transition:background 0.2s;" onmouseover="this.style.background='#b09a7e'" onmouseout="this.style.background='var(--gold)'">Buy Now</a>
       </div>
     </div>
 
-    <div class="service-card reveal" style="position:relative; overflow:hidden;">
+    <div class="service-card reveal" style="position:relative; overflow:hidden; display:flex; flex-direction:column;">
       <span class="service-num">05</span>
       <h3 class="service-title">The Trades Room</h3>
-      <p class="service-desc">The membership community built for subcontractors who are done doing it alone. A private space to share what works, learn from each other, stay accountable, and grow alongside people who truly understand the journey. Nothing like this exists in the trades.</p>
+      <p class="service-desc" style="flex:1;">The membership community built for subcontractors who are done doing it alone. A private space to share what works, learn from each other, stay accountable, and grow alongside people who truly understand the journey. Nothing like this exists in the trades.</p>
       <div style="display:flex; align-items:center; justify-content:space-between; margin-top:auto; padding-top:1.5rem; flex-wrap:wrap; gap:0.8rem;">
         <span class="service-tag" style="margin-top:0; padding-top:0;">Coming Soon</span>
         <a href="#community" style="font-size:10px; letter-spacing:2px; text-transform:uppercase; background:var(--gold); color:var(--green-deep); padding:8px 18px; text-decoration:none; font-weight:700; font-family:inherit; border-radius:2px; display:inline-block;">Join the Waitlist</a>
+      </div>
+    </div>
+
+    <div class="service-card reveal" style="display:flex; flex-direction:column;">
+      <span class="service-num">06</span>
+      <h3 class="service-title">Intro to AI Workshop</h3>
+      <p class="service-desc" style="flex:1;">A live 3 hour workshop for anyone who feels behind on AI and does not know where to start. No jargon, no overwhelm. Just a clear, guided path to using AI with confidence, taught by someone who was scared of it too not long ago.</p>
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-top:auto; padding-top:1.5rem; flex-wrap:wrap; gap:0.8rem;">
+        <span class="service-tag" style="margin-top:0; padding-top:0;">Live · Sept 9</span>
+        <a href="ai-workshop.html" style="font-size:10px; letter-spacing:2px; text-transform:uppercase; background:var(--gold); color:var(--green-deep); padding:8px 18px; text-decoration:none; font-weight:700; font-family:inherit; border-radius:2px; display:inline-block;">Learn More</a>
       </div>
     </div>
 
