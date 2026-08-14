@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feeling Overwhelmed by AI? Here's How to Start · Mint Management Blog</title>
+<meta name="description" content="Brad Dotinga on why AI overwhelm is real, why you don't need to become an expert to use it, and how to get early access to the AI Workshop before it officially launches Monday.">
+<meta name="keywords" content="AI for small business, AI automation, AI workshop, getting started with AI, Mint Management, Brad Dotinga">
+<meta property="og:title" content="Feeling Overwhelmed by AI? Here's How to Start">
+<meta property="og:description" content="Most people don't need more information about AI. They need someone to simplify it. Brad Dotinga on where to actually start, and early access to the AI Workshop before Monday's launch.">
+<meta property="og:type" content="article">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green: #2f3935;
+  --green-mid: #3a4640;
+  --gold: #947e64;
+  --gold-light: #b09a7e;
+  --cream: #f0ebe3;
+  --cream-muted: #c8bfb4;
+  --border: rgba(148,126,100,0.2);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito Sans', 'Avenir Next', 'Avenir', sans-serif;
+  background: var(--green);
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: 60px;
+  padding: 0 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(47,57,53,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.nav-right { display: flex; align-items: center; gap: 2rem; }
+
+.nav-link {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cream-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-link:hover { color: var(--gold); }
+
+.nav-cta {
+  background: var(--gold);
+  color: var(--green);
+  border: none;
+  padding: 8px 20px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.nav-cta:hover { background: var(--gold-light); }
+
+/* POST HEADER */
+.post-header {
+  padding: 9rem 4rem 4rem;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.post-tag {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 0.5px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.post-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.post-title em { font-style: italic; color: var(--gold); }
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.post-meta-item {
+  font-size: 11px;
+  color: var(--cream-muted);
+  letter-spacing: 0.5px;
+}
+
+.post-meta-divider {
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.4;
+}
+
+/* POST BODY */
+.post-body {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 4rem 4rem 6rem;
+}
+
+.post-body p {
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--cream-muted);
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.post-body p strong { color: var(--cream); font-weight: 600; }
+.post-body p em { color: var(--gold-light); font-style: italic; }
+
+.post-body h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.2;
+  margin: 3rem 0 1.2rem;
+  padding-top: 2rem;
+  border-top: 0.5px solid var(--border);
+}
+
+.post-intro {
+  font-size: 20px !important;
+  line-height: 1.7 !important;
+  color: var(--cream) !important;
+  font-weight: 300 !important;
+  margin-bottom: 2rem !important;
+}
+
+.post-divider {
+  width: 40px;
+  height: 0.5px;
+  background: var(--gold);
+  margin: 2.5rem 0;
+  opacity: 0.5;
+}
+
+.sign-off {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--gold-light);
+  margin-top: 2.5rem;
+}
+
+/* CTA BOX */
+.post-cta {
+  background: rgba(148,126,100,0.06);
+  border: 0.5px solid var(--border);
+  padding: 2.5rem;
+  margin-top: 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.post-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.post-cta .cta-badge {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 0.5px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+}
+
+.post-cta h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--cream);
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+
+.post-cta h3 em { font-style: italic; color: var(--gold); }
+
+.post-cta p {
+  font-size: 15px !important;
+  color: var(--cream-muted) !important;
+  margin-bottom: 1.5rem !important;
+  max-width: 480px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--green);
+  border: none;
+  padding: 12px 28px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover { background: var(--gold-light); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--cream);
+  border: 0.5px solid rgba(240,235,227,0.3);
+  padding: 12px 28px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+/* AUTHOR */
+.post-author {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2.5rem 4rem;
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.author-avatar {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: rgba(148,126,100,0.15);
+  border: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.author-name { font-size: 14px; font-weight: 600; color: var(--cream); margin-bottom: 3px; }
+.author-bio { font-size: 12px; color: var(--cream-muted); font-weight: 300; line-height: 1.5; }
+
+/* BACK TO BLOG */
+.back-bar {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 1.5rem 4rem;
+  border-top: 0.5px solid var(--border);
+}
+
+.back-link {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cream-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--gold); }
+
+/* FOOTER */
+footer {
+  border-top: 0.5px solid var(--border);
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.footer-brand { font-size: 11px; font-weight: 300; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); }
+.footer-copy { font-size: 10px; color: rgba(148,126,100,0.4); }
+
+@media (max-width: 768px) {
+  nav { padding: 0 1.2rem; }
+  .post-header { padding: 7rem 1.5rem 2rem; }
+  .post-title { font-size: clamp(28px, 8vw, 42px); }
+  .post-body { padding: 2rem 1.5rem 4rem; }
+  .post-body p { font-size: 16px; }
+  .post-body h2 { font-size: clamp(22px, 6vw, 30px); }
+  .post-intro { font-size: 18px !important; }
+  .post-author { padding: 2rem 1.5rem; }
+  .back-bar { padding: 1.5rem; }
+  .cta-buttons { flex-direction: column; }
+  .cta-buttons a { width: 100%; text-align: center; }
+  footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="mintmanagement.html" class="nav-logo">Mint Management</a>
+  <div class="nav-right">
+    <a href="blog.html" class="nav-link">← All Posts</a>
+    <a href="mintmanagement.html#contact" class="nav-cta">Let's Talk</a>
+  </div>
+</nav>
+
+<!-- POST HEADER -->
+<div class="post-header">
+  <div class="post-tag">AI Made Simple</div>
+  <h1 class="post-title">Feeling Overwhelmed by AI? <em>Here's How to Start.</em></h1>
+  <div class="post-meta">
+    <span class="post-meta-item">By Brad Dotinga</span>
+    <div class="post-meta-divider"></div>
+    <span class="post-meta-item">August 14, 2026</span>
+    <div class="post-meta-divider"></div>
+    <span class="post-meta-item">6 min read</span>
+  </div>
+  <div style="border-bottom: 0.5px solid var(--border); margin-top: 2rem;"></div>
+</div>
+
+<!-- POST BODY -->
+<div class="post-body">
+
+  <p class="post-intro">If you've been feeling overwhelmed by AI, you're not alone.</p>
+
+  <p>Over the past couple of years, I've had conversations with business owners, contractors, employees, friends and family who all seem to be experiencing the same thing. They know AI is changing the way we work. They know they probably need to start using it. They've heard about ChatGPT, AI automation, AI agents and hundreds of new AI tools. But when it comes to actually implementing AI into their personal life or business, they feel completely stuck. And I get it, because for a long time, I felt the same way.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>The AI Overwhelm Is Real</h2>
+
+  <p>There is a new AI tool seemingly every week. One writes content. Another creates videos. Another builds automations. Another analyzes data. Another creates presentations. Another can apparently run half your business. So where do you even start? That's the problem.</p>
+
+  <p><strong>Most people don't need more information about AI. They need someone to simplify it.</strong> They need to understand what AI can actually do for them and, more importantly, how they can use it in their everyday lives. That's something I've spent the last couple of years figuring out.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>I Decided to Go All In</h2>
+
+  <p>Over the past few years, I watched AI evolve incredibly quickly, and I knew something was happening. This wasn't just another technology trend that would disappear in a couple of years. AI was going to fundamentally change how businesses operate. How we communicate. How we market. How we sell. How we manage information. How we hire. How we train. How we estimate. How we automate repetitive tasks. And ultimately, how much we can accomplish with the time we have.</p>
+
+  <p>So I made a decision. Instead of watching from the sidelines, I was going to go all in. I started learning everything I could. I tested different AI tools. I built automations. I experimented. I made mistakes. I figured out what worked and what didn't. And most importantly, I started figuring out how to take AI out of the "cool technology" category and actually use it to solve real business problems. That's when everything changed for me.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>You Don't Need to Become an AI Expert</h2>
+
+  <p>One of the biggest misconceptions I see is that you need to become an AI expert before you can start using AI. You don't. You don't need to understand how large language models work. You don't need to know how to code. You don't need 50 different AI subscriptions. And you definitely don't need to spend hours every day trying to keep up with every new AI tool. You simply need to understand how AI can help you.</p>
+
+  <p>Think about your own day. How much time do you spend writing emails? Following up with customers? Creating proposals? Researching information? Creating social media posts? Organizing meetings? Building reports? Answering repetitive questions? Managing documents? Creating processes? There are countless opportunities for AI automation that can help reduce the amount of repetitive work you're doing. And that's where I believe the real opportunity is. Not replacing people. <strong>Making people dramatically more productive.</strong></p>
+
+  <div class="post-divider"></div>
+
+  <h2>AI Isn't About Replacing Your Team</h2>
+
+  <p>This is particularly important to me. When I talk about AI automation, I'm not talking about replacing your employees. I'm talking about giving your people better tools. Imagine taking an employee who spends two hours doing a repetitive task and giving them an AI system that helps them complete that same task in 20 minutes. What could they do with the extra time? That's where the real power of AI for small business comes in. You can take the people you already have and give them the ability to accomplish more. <strong>More productivity. More consistency. More capacity. And ultimately, more growth.</strong></p>
+
+  <div class="post-divider"></div>
+
+  <h2>Why Aren't People Using AI Yet?</h2>
+
+  <p>I think there are three major reasons. They don't know where to start, because there are too many tools and too much information. They're afraid they'll do it wrong, because people think they need to understand everything before they begin. And they don't have the time to figure it out, which is ironic, because one of the biggest benefits of AI is saving time.</p>
+
+  <p>That's why I believe we need to change the conversation. Instead of asking <em>"What AI tool should I be using?"</em> start asking <strong>"What am I doing every day that I wish took less time?"</strong> That's where you should start. Find the problem first. Then find the AI solution.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>My Goal Going Forward</h2>
+
+  <p>After spending the last couple of years going deep into AI, my goal now is pretty simple. I want to help people feel confident using AI. Not overwhelmed. Not intimidated. Not confused. Confident.</p>
+
+  <p>I want business owners to understand how to use AI in their businesses. I want people to understand how AI can help them save time and improve their operations, no matter what industry they're in. And I want people to understand that AI isn't just for technology companies or people sitting behind a computer all day. There are practical applications for almost every industry and almost every type of business. You don't have to implement everything at once. You just have to start.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>That's Why We're Launching the AI Workshop</h2>
+
+  <p>On Monday, we're officially launching a new AI workshop designed to help people take that first step. This isn't about overwhelming you with hundreds of AI tools. It's about showing you how to actually start implementing AI into your personal and business life. We'll break things down into practical, easy to understand steps and show you exactly where AI can make a difference. My goal is that you leave thinking, <strong>"I can do this."</strong> Because that's the biggest hurdle. Once you become comfortable using AI, everything changes. You start seeing opportunities everywhere. You start looking at your business differently. You start asking what else could I automate, what else could AI help me with. And that's when AI becomes really powerful.</p>
+
+  <p>We're intentionally limiting the number of people in this first workshop. I want it to be interactive. I want people to be able to ask questions. And I want us to be able to actually help you implement what we're teaching.</p>
+
+  <p>The official announcement goes out Monday. But if you're reading this today, you have the opportunity to grab one of the limited spots before that announcement ever goes live.</p>
+
+  <p>If you've been saying <em>"I know I need to start using AI, I just don't know where to start, I'll figure it out later,"</em> this is your opportunity. Don't wait until you feel ready. You probably never will. Start learning. Start experimenting. Start implementing. Because AI isn't coming. <strong>AI is already here.</strong> And the businesses that learn how to use it effectively are going to have a significant advantage over the businesses that continue waiting.</p>
+
+  <!-- CTA -->
+  <div class="post-cta">
+    <div class="cta-badge">Early Access · Before Monday's Launch</div>
+    <h3>Don't try to learn<br><em>everything about AI.</em></h3>
+    <p>Just learn how to use it. Get early access to the AI Workshop and reserve one of the limited spots before we officially open it up on Monday.</p>
+    <div class="cta-buttons">
+      <a href="ai-workshop.html" class="btn-primary">Reserve Your Spot</a>
+      <a href="mintmanagement.html#contact" class="btn-outline">Work With Brad</a>
+    </div>
+  </div>
+
+  <div class="sign-off">Brad ✌️</div>
+
+</div>
+
+<!-- AUTHOR -->
+<div class="post-author">
+  <div class="author-avatar">B</div>
+  <div>
+    <div class="author-name">Brad Dotinga</div>
+    <div class="author-bio">Founder of Mint Management. 25 years in the trades. Builder, coach, and the guy behind Mint AI. Based in Kelowna, BC.</div>
+  </div>
+</div>
+
+<!-- BACK -->
+<div class="back-bar">
+  <a href="blog.html" class="back-link">← Back to all posts</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Mint Management · Blog</div>
+  <div class="footer-copy">© 2026 Mint Management · Lead. Build. Grow.</div>
+</footer>
+
+</body>
+</html>
