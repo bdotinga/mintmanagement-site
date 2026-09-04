@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Gap Is Real. And It's Not Closing. · Mint Management Blog</title>
+<meta name="description" content="Brad Dotinga on the widening gap he's watching in real time between companies adopting AI and companies standing still — and why waiting is now the most expensive decision you can make.">
+<meta name="keywords" content="AI adoption, business growth, construction business owners, trades entrepreneurship, Mint Management, Mint AI">
+<meta property="og:title" content="The Gap Is Real. And It's Not Closing.">
+<meta property="og:description" content="Companies doing $1M are hitting $5M. Companies doing $10M are hitting $30M. No new hires, no new overhead. Brad Dotinga on the AI gap he's watching open in real time.">
+<meta property="og:type" content="article">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green: #2f3935;
+  --green-mid: #3a4640;
+  --gold: #947e64;
+  --gold-light: #b09a7e;
+  --cream: #f0ebe3;
+  --cream-muted: #c8bfb4;
+  --border: rgba(148,126,100,0.2);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito Sans', 'Avenir Next', 'Avenir', sans-serif;
+  background: var(--green);
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: 60px;
+  padding: 0 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(47,57,53,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.nav-right { display: flex; align-items: center; gap: 2rem; }
+
+.nav-link {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cream-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-link:hover { color: var(--gold); }
+
+.nav-cta {
+  background: var(--gold);
+  color: var(--green);
+  border: none;
+  padding: 8px 20px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.nav-cta:hover { background: var(--gold-light); }
+
+/* POST HEADER */
+.post-header {
+  padding: 9rem 4rem 4rem;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.post-tag {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 0.5px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.post-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.post-title em { font-style: italic; color: var(--gold); }
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.post-meta-item {
+  font-size: 11px;
+  color: var(--cream-muted);
+  letter-spacing: 0.5px;
+}
+
+.post-meta-divider {
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.4;
+}
+
+/* POST BODY */
+.post-body {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 4rem 4rem 6rem;
+}
+
+.post-body p {
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--cream-muted);
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.post-body p strong { color: var(--cream); font-weight: 600; }
+
+.post-body h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.2;
+  margin: 3rem 0 1.2rem;
+  padding-top: 2rem;
+  border-top: 0.5px solid var(--border);
+}
+
+.post-body h3 {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+}
+
+.post-intro {
+  font-size: 20px !important;
+  line-height: 1.7 !important;
+  color: var(--cream) !important;
+  font-weight: 300 !important;
+  margin-bottom: 2rem !important;
+}
+
+.post-divider {
+  width: 40px;
+  height: 0.5px;
+  background: var(--gold);
+  margin: 2.5rem 0;
+  opacity: 0.5;
+}
+
+.sign-off {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--gold-light);
+  margin-top: 2.5rem;
+}
+
+/* CTA BOX */
+.post-cta {
+  background: rgba(148,126,100,0.06);
+  border: 0.5px solid var(--border);
+  padding: 2.5rem;
+  margin-top: 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.post-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.post-cta h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--cream);
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+
+.post-cta h3 em { font-style: italic; color: var(--gold); }
+
+.post-cta p {
+  font-size: 15px !important;
+  color: var(--cream-muted) !important;
+  margin-bottom: 1.5rem !important;
+  max-width: 480px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--green);
+  border: none;
+  padding: 12px 28px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover { background: var(--gold-light); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--cream);
+  border: 0.5px solid rgba(240,235,227,0.3);
+  padding: 12px 28px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+/* AUTHOR */
+.post-author {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2.5rem 4rem;
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.author-avatar {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: rgba(148,126,100,0.15);
+  border: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.author-name { font-size: 14px; font-weight: 600; color: var(--cream); margin-bottom: 3px; }
+.author-bio { font-size: 12px; color: var(--cream-muted); font-weight: 300; line-height: 1.5; }
+
+/* BACK TO BLOG */
+.back-bar {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 1.5rem 4rem;
+  border-top: 0.5px solid var(--border);
+}
+
+.back-link {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cream-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--gold); }
+
+/* FOOTER */
+footer {
+  border-top: 0.5px solid var(--border);
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.footer-brand { font-size: 11px; font-weight: 300; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); }
+.footer-copy { font-size: 10px; color: rgba(148,126,100,0.4); }
+
+@media (max-width: 768px) {
+  nav { padding: 0 1.2rem; }
+  .post-header { padding: 7rem 1.5rem 2rem; }
+  .post-title { font-size: clamp(28px, 8vw, 42px); }
+  .post-body { padding: 2rem 1.5rem 4rem; }
+  .post-body p { font-size: 16px; }
+  .post-body h2 { font-size: clamp(22px, 6vw, 30px); }
+  .post-intro { font-size: 18px !important; }
+  .post-author { padding: 2rem 1.5rem; }
+  .back-bar { padding: 1.5rem; }
+  .cta-buttons { flex-direction: column; }
+  .cta-buttons a { width: 100%; text-align: center; }
+  footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="mintmanagement.html" class="nav-logo">Mint Management</a>
+  <div class="nav-right">
+    <a href="blog.html" class="nav-link">← All Posts</a>
+    <a href="mintmanagement.html#contact" class="nav-cta">Let's Talk</a>
+  </div>
+</nav>
+
+<!-- POST HEADER -->
+<div class="post-header">
+  <div class="post-tag">AI & Business Growth</div>
+  <h1 class="post-title">The Gap Is Real. And It's Not <em>Closing.</em></h1>
+  <div class="post-meta">
+    <span class="post-meta-item">By Brad Dotinga</span>
+    <div class="post-meta-divider"></div>
+    <span class="post-meta-item">September 4, 2026</span>
+    <div class="post-meta-divider"></div>
+    <span class="post-meta-item">4 min read</span>
+  </div>
+  <div style="border-bottom: 0.5px solid var(--border); margin-top: 2rem;"></div>
+</div>
+
+<!-- POST BODY -->
+<div class="post-body">
+
+  <p class="post-intro">I've spent 25 years building businesses. I know the steps. I know the timeline. I know what it costs in time, people, and overhead to grow a company's revenue by a million dollars, let alone five. This year, I watched everything I thought I knew about that get thrown out the window.</p>
+
+  <p>I'm not talking about a slight edge here or there. I'm talking about a gap that's opening up so fast it's honestly hard to watch if you're not on the right side of it.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>What 25 Years Taught Me</h2>
+
+  <p>When you've built companies as long as I have, you learn the math of growth. You learn what it costs to add a million dollars in revenue. You learn how many people you need to hire, how much overhead you have to carry, and how long it actually takes. That math has been the same for as long as I've been in business. Slow. Expensive. Grinding.</p>
+
+  <p>I've lived that math. I've hired the people, carried the overhead, and put in the years to grow a company the traditional way. So when I tell you what I'm seeing right now, I'm not guessing. I'm comparing it against 25 years of doing it the hard way.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>Then This Year Happened</h2>
+
+  <p>Something has shifted, and it's not subtle. I'm watching the companies that have actually leaned into AI pull away from everyone else. At first it looked like a small edge. It's not small anymore. It's massive.</p>
+
+  <p>I'm seeing businesses doing $1 million a year turn into $5 million businesses. Same team. Same overhead. No new hires. I'm seeing $10 million companies push past $30 million without adding a single employee. Not because they found some secret formula, but because they stopped doing manually what a machine can now do for them, and put that time back into the business.</p>
+
+  <p><strong>That used to be the exception. It's becoming the norm for the businesses paying attention.</strong></p>
+
+  <div class="post-divider"></div>
+
+  <h2>It's Not a Small Gap Anymore. It's a Chasm.</h2>
+
+  <p>A year ago, I would have told you AI adoption was a nice-to-have. An edge that might save you a few hours a week if you set it up right. I was wrong. What I'm watching now isn't an edge. It's a completely different growth curve.</p>
+
+  <p>The businesses adopting AI aren't just growing faster than everyone else. They're growing without the cost that used to come with growth. No extra overhead. No extra headcount. No extra years of grinding it out. They're compressing timelines that used to take a decade into a fraction of that, and the businesses standing still have no idea how far behind they already are.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>Which Side of the Gap Are You On?</h2>
+
+  <p>Here's the part that should light a fire under you if you haven't started. This gap isn't closing. It's widening every single month. The longer you wait to figure out where AI fits in your business, the further behind you fall, and the harder it gets to catch up.</p>
+
+  <p><strong>You don't need to become a tech expert. You need to start.</strong> That's it. Every company I'm watching pull away didn't wait until they understood everything. They got moving, and figured the rest out along the way.</p>
+
+  <p>I spent 25 years learning the slow way. You don't have to.</p>
+
+  <div class="sign-off">Brad ✌️</div>
+
+  <!-- CTA -->
+  <div class="post-cta">
+    <h3>Stop Watching the Gap<br><em>Widen From the Sidelines.</em></h3>
+    <p>The Intro to AI Workshop is a live, hands-on 3 hour session built for business owners who are done waiting. No jargon, no tech background needed. Just a clear path to putting AI to work in your business, starting now. Live October 6th.</p>
+    <div class="cta-buttons">
+      <a href="ai-workshop.html#pricing" class="btn-primary">Reserve Your Seat</a>
+      <a href="ai-workshop.html#curriculum" class="btn-outline">See What's Inside</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- AUTHOR -->
+<div class="post-author">
+  <div class="author-avatar">B</div>
+  <div>
+    <div class="author-name">Brad Dotinga</div>
+    <div class="author-bio">Founder of Mint Management. 25 years in the trades. Builder, coach, and the guy behind Mint AI. Based in Kelowna, BC.</div>
+  </div>
+</div>
+
+<!-- BACK -->
+<div class="back-bar">
+  <a href="blog.html" class="back-link">← Back to all posts</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Mint Management · Blog</div>
+  <div class="footer-copy">© 2026 Mint Management · Lead. Build. Grow.</div>
+</footer>
+
+</body>
+</html>
