@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Agents Are Here. · Mint Management Blog</title>
+<meta name="description" content="Brad Dotinga on the new wave of AI agents, why you no longer need to buy a computer and build your own setup to have one, and what an agent can actually do inside a trades business.">
+<meta name="keywords" content="AI agents, AI automation, trades business, subcontractors, Muse, AI for contractors, Mint Management">
+<meta property="og:title" content="The Agents Are Here.">
+<meta property="og:description" content="A year ago, having an AI agent meant buying a computer and building the thing yourself. Now you just sign up. Brad Dotinga on what agents can actually do for a trades business — and where to start.">
+<meta property="og:type" content="article">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green: #2f3935;
+  --green-mid: #3a4640;
+  --gold: #947e64;
+  --gold-light: #b09a7e;
+  --cream: #f0ebe3;
+  --cream-muted: #c8bfb4;
+  --border: rgba(148,126,100,0.2);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito Sans', 'Avenir Next', 'Avenir', sans-serif;
+  background: var(--green);
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: 60px;
+  padding: 0 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(47,57,53,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.nav-right { display: flex; align-items: center; gap: 2rem; }
+
+.nav-link {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cream-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-link:hover { color: var(--gold); }
+
+.nav-cta {
+  background: var(--gold);
+  color: var(--green);
+  border: none;
+  padding: 8px 20px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.nav-cta:hover { background: var(--gold-light); }
+
+/* POST HEADER */
+.post-header {
+  padding: 9rem 4rem 4rem;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.post-tag {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 0.5px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.post-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.post-title em { font-style: italic; color: var(--gold); }
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.post-meta-item {
+  font-size: 11px;
+  color: var(--cream-muted);
+  letter-spacing: 0.5px;
+}
+
+.post-meta-divider {
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.4;
+}
+
+/* POST BODY */
+.post-body {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 4rem 4rem 6rem;
+}
+
+.post-body p {
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--cream-muted);
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.post-body p strong { color: var(--cream); font-weight: 600; }
+
+.post-body h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.2;
+  margin: 3rem 0 1.2rem;
+  padding-top: 2rem;
+  border-top: 0.5px solid var(--border);
+}
+
+.post-body h3 {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+}
+
+.post-intro {
+  font-size: 20px !important;
+  line-height: 1.7 !important;
+  color: var(--cream) !important;
+  font-weight: 300 !important;
+  margin-bottom: 2rem !important;
+}
+
+.post-divider {
+  width: 40px;
+  height: 0.5px;
+  background: var(--gold);
+  margin: 2.5rem 0;
+  opacity: 0.5;
+}
+
+.sign-off {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--gold-light);
+  margin-top: 2.5rem;
+}
+
+/* CTA BOX */
+.post-cta {
+  background: rgba(148,126,100,0.06);
+  border: 0.5px solid var(--border);
+  padding: 2.5rem;
+  margin-top: 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.post-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.post-cta h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--cream);
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+
+.post-cta h3 em { font-style: italic; color: var(--gold); }
+
+.post-cta p {
+  font-size: 15px !important;
+  color: var(--cream-muted) !important;
+  margin-bottom: 1.5rem !important;
+  max-width: 480px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--green);
+  border: none;
+  padding: 12px 28px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover { background: var(--gold-light); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--cream);
+  border: 0.5px solid rgba(240,235,227,0.3);
+  padding: 12px 28px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+/* AUTHOR */
+.post-author {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2.5rem 4rem;
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.author-avatar {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: rgba(148,126,100,0.15);
+  border: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.author-name { font-size: 14px; font-weight: 600; color: var(--cream); margin-bottom: 3px; }
+.author-bio { font-size: 12px; color: var(--cream-muted); font-weight: 300; line-height: 1.5; }
+
+/* BACK TO BLOG */
+.back-bar {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 1.5rem 4rem;
+  border-top: 0.5px solid var(--border);
+}
+
+.back-link {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cream-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--gold); }
+
+/* FOOTER */
+footer {
+  border-top: 0.5px solid var(--border);
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.footer-brand { font-size: 11px; font-weight: 300; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); }
+.footer-copy { font-size: 10px; color: rgba(148,126,100,0.4); }
+
+@media (max-width: 768px) {
+  nav { padding: 0 1.2rem; }
+  .post-header { padding: 7rem 1.5rem 2rem; }
+  .post-title { font-size: clamp(28px, 8vw, 42px); }
+  .post-body { padding: 2rem 1.5rem 4rem; }
+  .post-body p { font-size: 16px; }
+  .post-body h2 { font-size: clamp(22px, 6vw, 30px); }
+  .post-intro { font-size: 18px !important; }
+  .post-author { padding: 2rem 1.5rem; }
+  .back-bar { padding: 1.5rem; }
+  .cta-buttons { flex-direction: column; }
+  .cta-buttons a { width: 100%; text-align: center; }
+  footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="mintmanagement.html" class="nav-logo">Mint Management</a>
+  <div class="nav-right">
+    <a href="blog.html" class="nav-link">← All Posts</a>
+    <a href="mintmanagement.html#contact" class="nav-cta">Let's Talk</a>
+  </div>
+</nav>
+
+<!-- POST HEADER -->
+<div class="post-header">
+  <div class="post-tag">AI &amp; Automation</div>
+  <h1 class="post-title">The Agents <em>Are Here.</em></h1>
+  <div class="post-meta">
+    <span class="post-meta-item">By Brad Dotinga</span>
+    <div class="post-meta-divider"></div>
+    <span class="post-meta-item">October 30, 2026</span>
+    <div class="post-meta-divider"></div>
+    <span class="post-meta-item">5 min read</span>
+  </div>
+  <div style="border-bottom: 0.5px solid var(--border); margin-top: 2rem;"></div>
+</div>
+
+<!-- POST BODY -->
+<div class="post-body">
+
+  <p class="post-intro">Not long ago, if you wanted an AI agent working for your business, you had to buy a computer just to run it on.</p>
+
+  <p>I'm not exaggerating. Guys were buying a spare Mac mini, clearing a corner of the office desk, and leaving it running around the clock so their "AI assistant" would stay alive. Then they had to build the thing themselves — connect the accounts, duct-tape the tools together, fix it every time something broke.</p>
+
+  <p>If you weren't technical, you weren't doing it. Simple as that.</p>
+
+  <p>That world is gone.</p>
+
+  <p>The new wave of agents — tools like Muse and Grok — you just sign up. No spare computer. No build. The agent lives in the cloud, connects to your email, your calendar, your files, and gets to work. What took a technical person weeks to set up a year ago is now an afternoon, most of it just deciding what you want it to do.</p>
+
+  <p>And I'm not talking about a chatbot.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>An Agent Isn't A Chatbot</h2>
+
+  <p>A chatbot answers questions. You type, it types back, and then you go do the actual work yourself.</p>
+
+  <p>An agent <strong>does the work</strong>.</p>
+
+  <p>It can read your inbox and pull out what matters. Draft the replies and wait for your go-ahead. Watch things for you — prices, listings, deadlines — and tap you on the shoulder when something changes. Research a question properly instead of giving you the first answer it finds. Write the first draft of almost anything: a quote follow-up, a job ad, a tough email you've been putting off.</p>
+
+  <p>It works while you're on site. It works at 9 p.m. when you're at the rink. It doesn't call in sick, and it doesn't forget.</p>
+
+  <p>I know this because I use one every day. Mine keeps an eye on my projects, watches prices and listings for me, and checks things every single morning that I used to either do myself or not do at all.</p>
+
+  <p>It's the closest thing I've found to hiring a sharp office manager who never sleeps — without hiring anyone.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>What This Means For A Trades Business</h2>
+
+  <p>If you run a crew, your problem was never the tools. It's everything after 5 p.m.</p>
+
+  <p>The estimate that should have gone out tonight. The invoice nobody followed up on. The quote request sitting in an inbox you haven't opened since Tuesday. The customer who needed a reply and got one from your competitor first.</p>
+
+  <p>That's the work an agent eats for breakfast.</p>
+
+  <p>Picture it: you finish a measure, and by the time you're back in the truck, the follow-up email is drafted and waiting for your thumbs-up. The overdue invoices get a polite nudge every week without you remembering. Your schedule, your reminders, your paperwork — handled in the background while you do the work that actually makes money.</p>
+
+  <p>This isn't five years away. This is available right now, to a five-person roofing crew the same as a five-hundred-person company. That's the part most guys haven't caught up to yet: <strong>the playing field just got levelled, and the early ones are going to feel it first.</strong></p>
+
+  <div class="post-divider"></div>
+
+  <h2>The Honest Catch</h2>
+
+  <p>Here's what nobody selling this stuff will tell you: an agent is only as good as its setup.</p>
+
+  <p>Connect the wrong things, give it no direction, and it's just another app you ignore by February. The power is real, but so is the learning curve — deciding what to hand over, what it should never touch, and how it should sound when it speaks for your business.</p>
+
+  <p>That's not a reason to wait. It's a reason to set it up properly the first time.</p>
+
+  <p>Because your competitors are having this same thought right now. Some of them are already set up.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>Where To Start</h2>
+
+  <p>Start with one job. The thing you hate doing, that eats your evenings, that doesn't need your hands — just your eyes on it before it goes out. Inbox triage. Quote follow-ups. Chasing invoices. One job, done well, will convince you faster than any post like this one.</p>
+
+  <p>And if you read all this thinking, "Great — I don't have time to set that up either"... that's kind of the point of Mint. Setting this up inside trades businesses is literally what we do.</p>
+
+  <p><strong>If you want an agent working in your business but don't know where to start, let's talk. We'll get it set up, connected, and doing real work — you just approve things from the truck.</strong></p>
+
+  <div class="sign-off">Brad ✌️</div>
+
+  <!-- CTA -->
+  <div class="post-cta">
+    <h3>Want An Agent Working<br>In <em>Your Business?</em></h3>
+    <p>Sounds amazing but feels overwhelming? That's exactly where we come in. We'll set it up around how your business actually runs — you just approve from the truck.</p>
+    <div class="cta-buttons">
+      <a href="mintmanagement.html#contact" class="btn-primary">Let's Talk</a>
+      <a href="mintmanagement.html" class="btn-outline">Learn More</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- AUTHOR -->
+<div class="post-author">
+  <div class="author-avatar">B</div>
+  <div>
+    <div class="author-name">Brad Dotinga</div>
+    <div class="author-bio">Brad Dotinga is the founder of Mint Management and the guy behind Mint AI. With 25 years in the trades, he helps subcontractors build stronger businesses through sales, systems, and AI. Based in Kelowna, BC.</div>
+  </div>
+</div>
+
+<!-- BACK -->
+<div class="back-bar">
+  <a href="blog.html" class="back-link">← Back to all posts</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Mint Management · Blog</div>
+  <div class="footer-copy">© 2026 Mint Management · Lead. Build. Grow.</div>
+</footer>
+
+</body>
+</html>
