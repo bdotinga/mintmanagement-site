@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Estimate Sitting in Your Truck. · Mint Management Blog</title>
+<meta name="description" content="Brad Dotinga on the estimates that never get sent, and how the Mint AI Estimation Engine gets your bid in first — built for subcontractors.">
+<meta name="keywords" content="estimating, estimate follow-up, subcontractor sales, roofing estimates, siding estimates, Mint Management">
+<meta property="og:title" content="The Estimate Sitting in Your Truck.">
+<meta property="og:description" content="Brad Dotinga on the estimates that never get sent, and how the Mint AI Estimation Engine gets your bid in first — built for subcontractors.">
+<meta property="og:type" content="article">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green: #2f3935;
+  --green-mid: #3a4640;
+  --gold: #947e64;
+  --gold-light: #b09a7e;
+  --cream: #f0ebe3;
+  --cream-muted: #c8bfb4;
+  --border: rgba(148,126,100,0.2);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito Sans', 'Avenir Next', 'Avenir', sans-serif;
+  background: var(--green);
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: 60px;
+  padding: 0 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(47,57,53,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.nav-right { display: flex; align-items: center; gap: 2rem; }
+
+.nav-link {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cream-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-link:hover { color: var(--gold); }
+
+.nav-cta {
+  background: var(--gold);
+  color: var(--green);
+  border: none;
+  padding: 8px 20px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.nav-cta:hover { background: var(--gold-light); }
+
+/* POST HEADER */
+.post-header {
+  padding: 9rem 4rem 4rem;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.post-tag {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 0.5px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.post-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.post-title em { font-style: italic; color: var(--gold); }
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.post-meta-item {
+  font-size: 11px;
+  color: var(--cream-muted);
+  letter-spacing: 0.5px;
+}
+
+.post-meta-divider {
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.4;
+}
+
+/* POST BODY */
+.post-body {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 4rem 4rem 6rem;
+}
+
+.post-body p {
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--cream-muted);
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.post-body p strong { color: var(--cream); font-weight: 600; }
+
+.post-body h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.2;
+  margin: 3rem 0 1.2rem;
+  padding-top: 2rem;
+  border-top: 0.5px solid var(--border);
+}
+
+.post-body h3 {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+}
+
+.post-intro {
+  font-size: 20px !important;
+  line-height: 1.7 !important;
+  color: var(--cream) !important;
+  font-weight: 300 !important;
+  margin-bottom: 2rem !important;
+}
+
+.post-divider {
+  width: 40px;
+  height: 0.5px;
+  background: var(--gold);
+  margin: 2.5rem 0;
+  opacity: 0.5;
+}
+
+.sign-off {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--gold-light);
+  margin-top: 2.5rem;
+}
+
+/* CTA BOX */
+.post-cta {
+  background: rgba(148,126,100,0.06);
+  border: 0.5px solid var(--border);
+  padding: 2.5rem;
+  margin-top: 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.post-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.post-cta h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--cream);
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+
+.post-cta h3 em { font-style: italic; color: var(--gold); }
+
+.post-cta p {
+  font-size: 15px !important;
+  color: var(--cream-muted) !important;
+  margin-bottom: 1.5rem !important;
+  max-width: 480px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--green);
+  border: none;
+  padding: 12px 28px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover { background: var(--gold-light); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--cream);
+  border: 0.5px solid rgba(240,235,227,0.3);
+  padding: 12px 28px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+/* AUTHOR */
+.post-author {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2.5rem 4rem;
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.author-avatar {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: rgba(148,126,100,0.15);
+  border: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.author-name { font-size: 14px; font-weight: 600; color: var(--cream); margin-bottom: 3px; }
+.author-bio { font-size: 12px; color: var(--cream-muted); font-weight: 300; line-height: 1.5; }
+
+/* BACK TO BLOG */
+.back-bar {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 1.5rem 4rem;
+  border-top: 0.5px solid var(--border);
+}
+
+.back-link {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cream-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--gold); }
+
+/* FOOTER */
+footer {
+  border-top: 0.5px solid var(--border);
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.footer-brand { font-size: 11px; font-weight: 300; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); }
+.footer-copy { font-size: 10px; color: rgba(148,126,100,0.4); }
+
+@media (max-width: 768px) {
+  nav { padding: 0 1.2rem; }
+  .post-header { padding: 7rem 1.5rem 2rem; }
+  .post-title { font-size: clamp(28px, 8vw, 42px); }
+  .post-body { padding: 2rem 1.5rem 4rem; }
+  .post-body p { font-size: 16px; }
+  .post-body h2 { font-size: clamp(22px, 6vw, 30px); }
+  .post-intro { font-size: 18px !important; }
+  .post-author { padding: 2rem 1.5rem; }
+  .back-bar { padding: 1.5rem; }
+  .cta-buttons { flex-direction: column; }
+  .cta-buttons a { width: 100%; text-align: center; }
+  footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="mintmanagement.html" class="nav-logo">Mint Management</a>
+  <div class="nav-right">
+    <a href="blog.html" class="nav-link">← All Posts</a>
+    <a href="mintmanagement.html#contact" class="nav-cta">Let's Talk</a>
+  </div>
+</nav>
+
+<!-- POST HEADER -->
+<div class="post-header">
+  <div class="post-tag">Estimating &amp; Sales</div>
+  <h1 class="post-title">The Estimate Sitting <em>in Your Truck.</em></h1>
+  <div class="post-meta">
+    <span class="post-meta-item">By Brad Dotinga</span>
+    <div class="post-meta-divider"></div>
+    <span class="post-meta-item">November 6, 2026</span>
+    <div class="post-meta-divider"></div>
+    <span class="post-meta-item">5 min read</span>
+  </div>
+  <div style="border-bottom: 0.5px solid var(--border); margin-top: 2rem;"></div>
+</div>
+
+<!-- POST BODY -->
+<div class="post-body">
+
+  <p class="post-intro">There's an estimate sitting in your truck right now. Maybe two. You measured the job days ago, you know the number, and it still hasn't gone out.</p>
+
+  <p>I know, because I've been that guy. You tell yourself you'll finish it tonight. Then tonight you're tired, the kids need you, and the paperwork slides to tomorrow. Tomorrow there's another measure, another crew problem, and the estimate slides again.</p>
+
+  <p>Meanwhile, the homeowner is not waiting for you.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>You Didn't Lose It On Price</h2>
+
+  <p>Here's what most guys get wrong about the jobs they lose. They assume they got beat on price. Somebody cheaper, somebody hungrier.</p>
+
+  <p>Most of the time, that's not what happened. What happened is the homeowner got three numbers, and yours arrived last — or never arrived at all. By the time your estimate showed up, they'd already picked someone, already felt good about that someone, and your number was just a comparison point.</p>
+
+  <p><strong>Speed isn't a nice-to-have in estimating. Speed is the sale.</strong> The first good number usually wins, because the first good number feels like the company that actually wants the work.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>Why Estimates Pile Up</h2>
+
+  <p>It's not laziness. It's how the day is built.</p>
+
+  <p>You're on site all day, doing the work that pays. Estimating happens in the margins — the truck between jobs, the kitchen table after dinner, the Sunday you promised yourself you wouldn't work. And because nobody's watching, it slips. There's no foreman standing over your paperwork asking where it is.</p>
+
+  <p>Then there's the perfectionism trap. You hold an estimate back because you want to double-check one price, confirm one detail, make it a little cleaner. A day passes. Then three. The estimate that was 95% done on Tuesday is still 95% done on Friday, and the job is gone.</p>
+
+  <p>A good estimate sent today beats a perfect estimate sent next week. Every time.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>Discipline Isn't The Fix. You're The Bottleneck.</h2>
+
+  <p>For years my rule was: same day. Measure it in the morning, send it before bed. And it works — when you actually do it.</p>
+
+  <p>But be honest about why it keeps slipping. The bottleneck is you. You're the best estimator in your company, so every number waits on your evenings, your Sundays, your energy. There's a ceiling on that, and you hit it every busy season.</p>
+
+  <p>That's the problem we built the <a href="mint-ai.html" style="color: var(--gold);">Mint AI Estimation Engine</a> to kill.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>What The Engine Actually Does</h2>
+
+  <p>And this isn't a siding-only thing. We built it for subcontractors, period — siding, roofing, plumbing, electrical, asphalt paving, you name it. If you price work for a living, it was built for you — by people from our world, not some generic software company's guess at it.</p>
+
+  <p>You drop in your takeoff or site report. The engine reads the measurements, builds the full job costing — materials, labour, margin applied — and drafts a clean, client-ready quote. Report to quote in under a minute. Not your whole evening. Under a minute.</p>
+
+  <p>Read that again, because this is the part that changes your business: <strong>when an estimate takes minutes instead of hours, you stop cherry-picking which jobs to bid.</strong> You bid everything. Ten times the estimates out the door, and every single one lands before the other guy has even opened his spreadsheet.</p>
+
+  <p>And the part everyone skips — the follow-up — the engine handles that too. The quote goes out, the check-ins go out, and when the customer is ready, the call lands on your calendar. You just show up and close.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>The Real Win Is Your Time Back</h2>
+
+  <p>Every hour you spend building estimates at the kitchen table is an hour you're not running your company — and not with your family. The engine gives those hours back.</p>
+
+  <p>Same-day bids used to be a discipline problem. Now they're a systems decision. The guys adopting this stuff aren't working longer nights than you. They just stopped being the bottleneck in their own business.</p>
+
+  <p><strong>Your next job is probably already measured. It's just sitting in your truck. The only question is whether your number gets there first.</strong></p>
+
+  <div class="sign-off">Brad ✌️</div>
+
+  <!-- CTA -->
+  <div class="post-cta">
+    <h3>Get Your Bid In <em>First.</em></h3>
+    <p>The Mint AI Estimation Engine was built for subcontractors — every trade, not just ours. Drop in a takeoff, get a costed, client-ready quote in under a minute — and get your evenings back. Take a look at how it works.</p>
+    <div class="cta-buttons">
+      <a href="mint-ai.html" class="btn-primary">See The Estimation Engine</a>
+      <a href="mintmanagement.html#contact" class="btn-outline">Let's Talk</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- AUTHOR -->
+<div class="post-author">
+  <div class="author-avatar">B</div>
+  <div>
+    <div class="author-name">Brad Dotinga</div>
+    <div class="author-bio">Brad Dotinga is the founder of Mint Management and the guy behind Mint AI. With 25 years in the trades, he helps subcontractors build stronger businesses through sales, systems, and AI. Based in Kelowna, BC.</div>
+  </div>
+</div>
+
+<!-- BACK -->
+<div class="back-bar">
+  <a href="blog.html" class="back-link">← Back to all posts</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Mint Management · Blog</div>
+  <div class="footer-copy">© 2026 Mint Management · Lead. Build. Grow.</div>
+</footer>
+
+</body>
+</html>
