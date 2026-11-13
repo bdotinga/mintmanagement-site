@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Job's Done. So Why Aren't You Paid? · Mint Management Blog</title>
+<meta name="description" content="The job's done, the invoice is in — and the GC says he hasn't been paid by the owner yet. Brad Dotinga on fair payment terms, 30-day draws, and the 55-day holdback clock.">
+<meta name="keywords" content="getting paid, general contractor, pay when paid, lien holdback, progress draws, substantial completion, subcontractor cash flow, Mint Management">
+<meta property="og:title" content="The Job's Done. So Why Aren't You Paid?">
+<meta property="og:description" content="The job's done, the invoice is in — and the GC says he hasn't been paid by the owner yet. Brad Dotinga on fair payment terms, 30-day draws, and the 55-day holdback clock.">
+<meta property="og:type" content="article">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green: #2f3935;
+  --green-mid: #3a4640;
+  --gold: #947e64;
+  --gold-light: #b09a7e;
+  --cream: #f0ebe3;
+  --cream-muted: #c8bfb4;
+  --border: rgba(148,126,100,0.2);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito Sans', 'Avenir Next', 'Avenir', sans-serif;
+  background: var(--green);
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: 60px;
+  padding: 0 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(47,57,53,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.nav-right { display: flex; align-items: center; gap: 2rem; }
+
+.nav-link {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cream-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-link:hover { color: var(--gold); }
+
+.nav-cta {
+  background: var(--gold);
+  color: var(--green);
+  border: none;
+  padding: 8px 20px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.nav-cta:hover { background: var(--gold-light); }
+
+/* POST HEADER */
+.post-header {
+  padding: 9rem 4rem 4rem;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.post-tag {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 0.5px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.post-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.post-title em { font-style: italic; color: var(--gold); }
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.post-meta-item {
+  font-size: 11px;
+  color: var(--cream-muted);
+  letter-spacing: 0.5px;
+}
+
+.post-meta-divider {
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.4;
+}
+
+/* POST BODY */
+.post-body {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 4rem 4rem 6rem;
+}
+
+.post-body p {
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--cream-muted);
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.post-body p strong { color: var(--cream); font-weight: 600; }
+
+.post-body h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.2;
+  margin: 3rem 0 1.2rem;
+  padding-top: 2rem;
+  border-top: 0.5px solid var(--border);
+}
+
+.post-body h3 {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+}
+
+.post-intro {
+  font-size: 20px !important;
+  line-height: 1.7 !important;
+  color: var(--cream) !important;
+  font-weight: 300 !important;
+  margin-bottom: 2rem !important;
+}
+
+.post-divider {
+  width: 40px;
+  height: 0.5px;
+  background: var(--gold);
+  margin: 2.5rem 0;
+  opacity: 0.5;
+}
+
+.sign-off {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--gold-light);
+  margin-top: 2.5rem;
+}
+
+/* CTA BOX */
+.post-cta {
+  background: rgba(148,126,100,0.06);
+  border: 0.5px solid var(--border);
+  padding: 2.5rem;
+  margin-top: 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.post-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.post-cta h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--cream);
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+
+.post-cta h3 em { font-style: italic; color: var(--gold); }
+
+.post-cta p {
+  font-size: 15px !important;
+  color: var(--cream-muted) !important;
+  margin-bottom: 1.5rem !important;
+  max-width: 480px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--green);
+  border: none;
+  padding: 12px 28px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover { background: var(--gold-light); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--cream);
+  border: 0.5px solid rgba(240,235,227,0.3);
+  padding: 12px 28px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+/* AUTHOR */
+.post-author {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2.5rem 4rem;
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.author-avatar {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: rgba(148,126,100,0.15);
+  border: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.author-name { font-size: 14px; font-weight: 600; color: var(--cream); margin-bottom: 3px; }
+.author-bio { font-size: 12px; color: var(--cream-muted); font-weight: 300; line-height: 1.5; }
+
+/* BACK TO BLOG */
+.back-bar {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 1.5rem 4rem;
+  border-top: 0.5px solid var(--border);
+}
+
+.back-link {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cream-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--gold); }
+
+/* FOOTER */
+footer {
+  border-top: 0.5px solid var(--border);
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.footer-brand { font-size: 11px; font-weight: 300; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); }
+.footer-copy { font-size: 10px; color: rgba(148,126,100,0.4); }
+
+@media (max-width: 768px) {
+  nav { padding: 0 1.2rem; }
+  .post-header { padding: 7rem 1.5rem 2rem; }
+  .post-title { font-size: clamp(28px, 8vw, 42px); }
+  .post-body { padding: 2rem 1.5rem 4rem; }
+  .post-body p { font-size: 16px; }
+  .post-body h2 { font-size: clamp(22px, 6vw, 30px); }
+  .post-intro { font-size: 18px !important; }
+  .post-author { padding: 2rem 1.5rem; }
+  .back-bar { padding: 1.5rem; }
+  .cta-buttons { flex-direction: column; }
+  .cta-buttons a { width: 100%; text-align: center; }
+  footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="mintmanagement.html" class="nav-logo">Mint Management</a>
+  <div class="nav-right">
+    <a href="blog.html" class="nav-link">← All Posts</a>
+    <a href="mintmanagement.html#contact" class="nav-cta">Let's Talk</a>
+  </div>
+</nav>
+
+<!-- POST HEADER -->
+<div class="post-header">
+  <div class="post-tag">Getting Paid &amp; Cash Flow</div>
+  <h1 class="post-title">The Job's Done. <em>So Why Aren't You Paid?</em></h1>
+  <div class="post-meta">
+    <span class="post-meta-item">By Brad Dotinga</span>
+    <div class="post-meta-divider"></div>
+    <span class="post-meta-item">November 13, 2026</span>
+    <div class="post-meta-divider"></div>
+    <span class="post-meta-item">5 min read</span>
+  </div>
+  <div style="border-bottom: 0.5px solid var(--border); margin-top: 2rem;"></div>
+</div>
+
+<!-- POST BODY -->
+<div class="post-body">
+
+  <p class="post-intro">You finished the job. The work is clean, the invoice is in — and the GC still hasn't paid you. Why? Because he says he hasn't been paid by the owner yet.</p>
+
+  <p>I've heard that one more times than I can count. And it's never just that one reason. It's a million and one of them. The owner's draw hasn't come through. The paperwork is sitting on someone's desk. Next cheque run. Next month.</p>
+
+  <p>Meanwhile, your crew got paid. Your suppliers got paid. You're the only one still waiting — and you're floating the whole job while you wait.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>"We Haven't Been Paid Yet" Is Not Your Problem</h2>
+
+  <p>When a GC tells you he can't pay you because the owner hasn't paid him, here's what he's actually saying: you're financing his project. His cash flow problem just became yours.</p>
+
+  <p>Some delay is baked into commercial work — I'll get to that. But there's a big difference between how commercial work runs and being used as somebody's line of credit. And that line gets drawn in the contract, before the job starts. Not after your invoice is 60 days old and you're making awkward phone calls.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>Align Yourself With the Right GCs</h2>
+
+  <p>Most payment problems are actually partner problems. You aligned yourself with the wrong general contractor, and now you're paying for it — literally.</p>
+
+  <p>The right GCs are out there. They're the ones who value you, value your work, and pay you on time. They treat their subs like partners, because they know good subs are hard to find and worth keeping.</p>
+
+  <p>So vet them the same way they vet you. Ask around — other subs know exactly who pays and who plays games, and they'll tell you. Start smaller with a new GC and watch how the first job pays before you load up on the second one. <strong>A GC's payment reputation is worth more than the size of his projects.</strong></p>
+
+  <div class="post-divider"></div>
+
+  <h2>Don't Sign Unless the Terms Are Fair</h2>
+
+  <p>It is so important not to enter into a contract unless the payment terms are fair. If the terms are bad, the job is bad — I don't care how big it is. Here's what fair looks like:</p>
+
+  <p><strong>A deposit at the beginning for your major materials.</strong> You should be able to collect money up front to cover the big material costs. You're a subcontractor, not a supply house offering free credit.</p>
+
+  <p><strong>Progress draws paid at 30 days — no matter what.</strong> Agree before you start that your draws get paid at 30 days, and it doesn't matter whether the general contractor has been paid by the owner or not. His deal with the owner is his problem. Your deal is with him.</p>
+
+  <p><strong>The 10% lien holdback, paid on time.</strong> More on that next — because this is where guys leave real money sitting for months without knowing why.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>The Holdback Clock Doesn't Start Itself</h2>
+
+  <p>On commercial work, the GC holds back 10% — the lien holdback. That holdback gets paid 55 days after substantial completion. That's the deal, and on time is fine.</p>
+
+  <p>But here's the part that gets missed: the clock doesn't start on its own. Substantial completion has to be granted. When you reach the point where you're substantially complete, you need to send in a letter requesting substantial completion — and once the GC grants it, your 55 days start counting.</p>
+
+  <p>No letter, no clock. Guys wait and wait on holdback money that was never even triggered. The letter takes ten minutes. Send it the day you're substantially complete, not three months later when cash gets tight.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>Even Done Right, Commercial Work Is Hard to Finance</h2>
+
+  <p>Now the honest part. Even in a perfect world — right GC, fair terms, everything signed — it is still hard to finance a commercial project. Especially when you're first starting a job, you can be waiting 60 days to receive payment while payroll and materials go out every single week.</p>
+
+  <p>That's not failure. That's the game. But you have to walk in knowing it, with the cash or the credit to carry it. The subs who get hurt are the ones who find out at day 45.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>Residential Is a Different World</h2>
+
+  <p>Residential work is completely different — you can dictate the terms a little bit better. A deposit invoice upon signing the contract. A material payment the day the materials land on site. And your final payment on the day of completion.</p>
+
+  <p>Good homeowners don't blink at that. It's how a professional runs it, and it means you're never financing somebody's renovation out of your own pocket.</p>
+
+  <div class="post-divider"></div>
+
+  <h2>It Comes Down to Who You Work With</h2>
+
+  <p>Commercial or residential, it all boils down to the people that you work with. Vet the GCs you work for. Vet the homeowners you sign with. There's no point in entering into a contract if you're not going to get paid — the time to protect yourself is before you start, not after the money is already late.</p>
+
+  <p>This is exactly the stuff I work through with owners in <a href="mintmanagement.html#contact" style="color: var(--gold);">coaching</a> — not the trade, you already know the trade. The business around it: who you work for, what you sign, and how the money actually moves.</p>
+
+  <p><strong>The job's the easy part. Getting paid for it is the business.</strong></p>
+
+  <div class="sign-off">Brad ✌️</div>
+
+  <!-- CTA -->
+  <div class="post-cta">
+    <h3>Stop Working For GCs <em>Who Don't Pay.</em></h3>
+    <p>If you're stuck chasing draws and holdbacks from the wrong contractors, let's sort out who you work for and what you sign — before the next job, not after it. Book a call and we'll talk it through.</p>
+    <div class="cta-buttons">
+      <a href="mintmanagement.html#contact" class="btn-primary">Book a Call</a>
+      <a href="mint-ai.html" class="btn-outline">See The Estimation Engine</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- AUTHOR -->
+<div class="post-author">
+  <div class="author-avatar">B</div>
+  <div>
+    <div class="author-name">Brad Dotinga</div>
+    <div class="author-bio">Brad Dotinga is the founder of Mint Management and the guy behind Mint AI. With 25 years in the trades, he helps subcontractors build stronger businesses through sales, systems, and AI. Based in Kelowna, BC.</div>
+  </div>
+</div>
+
+<!-- BACK -->
+<div class="back-bar">
+  <a href="blog.html" class="back-link">← Back to all posts</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Mint Management · Blog</div>
+  <div class="footer-copy">© 2026 Mint Management · Lead. Build. Grow.</div>
+</footer>
+
+</body>
+</html>
